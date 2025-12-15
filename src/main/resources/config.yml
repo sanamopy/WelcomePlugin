@@ -1,0 +1,7 @@
+# PLACEHOLDERS:
+#
+# %player_name % = The player's display name
+
+messages:
+  welcome: "&a+ &7%player_name%"
+  quit: "&c- &f%player_name%"
