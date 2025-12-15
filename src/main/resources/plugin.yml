@@ -1,0 +1,4 @@
+name: WelcomePlugin
+version: '1.0-SNAPSHOT'
+main: com.sanamo.welcomePlugin.WelcomePlugin
+api-version: '1.21'
