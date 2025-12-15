@@ -1,7 +1,427 @@
 # PLACEHOLDERS:
-#
-# %player_name % = The player's display name
+# %player_name% = The player's display name
+# %server_name% = Server name
 
+# IN GAME MESSAGES
+# Placeholders: %player_name%, %server_name%
 messages:
-  welcome: "&a+ &7%player_name%"
-  quit: "&c- &f%player_name%"
+  welcome: "&a+ &r&7%player_name% joined the server"
+  quit: "&c- &r&7%player_name% left the server"
+  first_join: "&7&l✨ &r&7Welcome &a&l%player_name% &r&7to the server! This is your first time joining! &e&l✨"
+  missing_permissions: "&c&l⚠ &r&cYou don't have the required permissions to do that."
+  ran_by_player: "&c&l⚠ &r&cThis command can only be ran by players."
+  config_reloaded: "&a&l✓ &r&7Plugin configuration &a&lrefreshed &r&7successfully!"
+  welcome_enabled: "&a&l✓ &r&7Welcome messages are now &a&lenabled&r&7."
+  welcome_disabled: "&c&l✗ &r&7Welcome messages are now &c&ldisabled&r&7."
+  quit_enabled: "&a&l✓ &r&7Quit messages are now &a&lenabled&r&7."
+  quit_disabled: "&c&l✗ &r&7Quit messages are now &c&ldisabled&r&7."
+  first_join_enabled: "&a&l✓ &r&7First join messages are now &a&lenabled&r&7."
+  first_join_disabled: "&c&l✗ &r&7First join messages are now &c&ldisabled&r&7."
+  welcome_titles_enabled: "&a&l✓ &r&7Welcome titles are now &a&lenabled&r&7."
+  welcome_titles_disabled: "&c&l✗ &r&7Welcome titles are now &c&ldisabled&r&7."
+  sounds_enabled: "&a&l✓ &r&7Welcome sounds are now &a&lenabled&r&7."
+  sounds_disabled: "&c&l✗ &r&7Welcome sounds are now &c&ldisabled&r&7."
+  effects_enabled: "&a&l✓ &r&7Welcome effects are now &a&lenabled&r&7."
+  effects_disabled: "&c&l✗ &r&7Welcome effects are now &c&ldisabled&r&7."
+  fireworks_enabled: "&a&l✓ &r&7Welcome fireworks are now &a&lenabled&r&7."
+  fireworks_disabled: "&c&l✗ &r&7Welcome fireworks are now &c&ldisabled&r&7."
+  kit_enabled: "&a&l✓ &r&7Welcome kit is now &a&lenabled&r&7."
+  kit_disabled: "&c&l✗ &r&7Welcome kit is now &c&ldisabled&r&7."
+  boss_bar_enabled: "&a&l✓ &r&7Welcome boss bar is now &a&lenabled&r&7."
+  boss_bar_disabled: "&c&l✗ &r&7Welcome boss bar is now &c&ldisabled&r&7."
+  action_bar_enabled: "&a&l✓ &r&7Welcome action bar is now &a&lenabled&r&7."
+  action_bar_disabled: "&c&l✗ &r&7Welcome action bar is now &c&ldisabled&r&7."
+  broadcast_enabled: "&a&l✓ &r&7Welcome message broadcasting is now &a&lenabled&r&7."
+  broadcast_disabled: "&c&l✗ &r&7Welcome message broadcasting is now &c&ldisabled&r&7."
+
+# FEATURES
+features:
+  listeners: true
+  commands: true
+  config: true
+  welcome_messages: true
+  quit_messages: true
+  first_join_messages: true
+  welcome_titles: true
+  welcome_sounds: true
+  welcome_effects: true
+  welcome_fireworks: true
+  welcome_kit: true
+  welcome_commands: true
+  welcome_boss_bar: true
+  welcome_action_bar: true
+  welcome_book: true
+  broadcast_welcome: false
+  broadcast_quit: false
+  join_delay: 0
+  quit_delay: 0
+
+# WELCOME TITLES
+welcome_titles:
+  enabled: true
+  fade_in: 10
+  stay: 70
+  fade_out: 20
+  title: "&6&l══╗ &e&lWelcome! &6&l╚══"
+  subtitle: "&7Enjoy your stay, &a&l%player_name%&r&7!"
+
+# WELCOME SOUNDS
+welcome_sounds:
+  enabled: true
+  sound: "ENTITY_PLAYER_LEVELUP"
+  volume: 1.0
+  pitch: 1.0
+  first_join_sound: "ENTITY_FIREWORK_ROCKET_LAUNCH"
+  first_join_volume: 1.0
+  first_join_pitch: 1.0
+
+# WELCOME EFFECTS
+welcome_effects:
+  enabled: true
+  particle: "VILLAGER_HAPPY"
+  count: 20
+  offset_x: 0.5
+  offset_y: 1.0
+  offset_z: 0.5
+  speed: 0.1
+  first_join_particle: "FIREWORK"
+  first_join_count: 50
+
+# WELCOME FIREWORKS
+welcome_fireworks:
+  enabled: true
+  first_join_only: true
+  count: 3
+  power: 2
+  delay: 20
+  colors:
+    - "RED"
+    - "GREEN"
+    - "BLUE"
+    - "YELLOW"
+    - "PURPLE"
+  fade_colors:
+    - "WHITE"
+  type: "BALL_LARGE"
+  flicker: true
+  trail: true
+
+# WELCOME KIT
+welcome_kit:
+  enabled: true
+  first_join_only: true
+  delay: 40
+  items:
+    - "BREAD:5"
+    - "WOODEN_SWORD:1"
+    - "WOODEN_PICKAXE:1"
+    - "LEATHER_HELMET:1"
+
+# WELCOME COMMANDS
+# Execute console commands when players join
+# Use placeholders: %player_name%, %server_name%
+# Example: "tell %player_name% Welcome to the server!"
+welcome_commands:
+  enabled: false
+  first_join_only: false
+  delay: 10
+  commands: []
+  first_join_commands: []
+
+# WELCOME BOSS BAR
+welcome_boss_bar:
+  enabled: true
+  first_join_only: false
+  message: "&a&lWelcome &7%player_name% &a&lto &6&l%server_name%&r&7!"
+  color: "GREEN"
+  style: "SOLID"
+  progress: 1.0
+  duration: 100
+  fade_in: 20
+  fade_out: 20
+
+# WELCOME ACTION BAR
+welcome_action_bar:
+  enabled: true
+  first_join_only: false
+  message: "&e&lWelcome! &7Type &a/help &7for commands"
+  duration: 60
+  delay: 30
+
+# WELCOME BOOK
+welcome_book:
+  enabled: true
+  first_join_only: true
+  title: "&6&lWelcome to %server_name%!"
+  author: "Server Staff"
+  pages:
+    - "&lWelcome!\n\n&r&7Thank you for joining\n&a%server_name%&7!\n\n&7We hope you enjoy\nyour stay here."
+    - "&lServer Rules\n\n&r&71. Be respectful\n&72. No griefing\n&73. Have fun!\n\n&7For more info, visit\n&bwww.example.com"
+    - "&lCommands\n\n&r&7/spawn - Go to spawn\n&7/warp - List warps\n&7/help - Get help\n\n&7Need help? Ask staff!"
+
+welcome_config:
+  title: "&8▬▬▬▬▬▬▬▬▬ &b&lWelcome &7Config &8▬▬▬▬▬▬▬▬▬"
+  menu_size: 54
+  
+  # Live Feed Settings
+  feed:
+    enabled: true
+    max_entries: 10
+    display_count: 5
+    material: "BOOK"
+    name: "&e&l📖 &r&e&lLive Activity Feed"
+    header: "&7&m                    &r &7Recent Activity &7&m                    "
+    empty_message: "&8&oNo recent activity to display"
+    refresh_hint: "&e&lClick &r&7to refresh the feed!"
+    join_action: "joined!"
+    quit_action: "quit!"
+    join_color: "&a"
+    quit_color: "&c"
+    time_format: "HH:mm:ss"
+  
+  # Feed slot (Row 1, center - slot 13)
+  feed_slot: 13
+  
+  # Welcome Messages Toggle (Row 2, slot 20)
+  welcome_toggle:
+    slot: 20
+    material_enabled: "GREEN_STAINED_GLASS"
+    material_disabled: "RED_STAINED_GLASS"
+    name_enabled: "&a&l✓ &r&a&lWelcome Messages"
+    name_disabled: "&c&l✗ &r&c&lWelcome Messages"
+    description:
+      - "&7&m━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+      - "&r"
+      - "&7Display a welcome message when"
+      - "&7players join your server."
+      - "&r"
+      - "&7&oClick to toggle this feature"
+      - "&r"
+      - "&7&m━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    status_enabled: "&a&l● &r&aEnabled"
+    status_disabled: "&c&l● &r&cDisabled"
+  
+  # Quit Messages Toggle (Row 2, slot 21)
+  quit_toggle:
+    slot: 21
+    material_enabled: "GREEN_STAINED_GLASS"
+    material_disabled: "RED_STAINED_GLASS"
+    name_enabled: "&a&l✓ &r&a&lQuit Messages"
+    name_disabled: "&c&l✗ &r&c&lQuit Messages"
+    description:
+      - "&7&m━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+      - "&r"
+      - "&7Display a goodbye message when"
+      - "&7players leave your server."
+      - "&r"
+      - "&7&oClick to toggle this feature"
+      - "&r"
+      - "&7&m━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    status_enabled: "&a&l● &r&aEnabled"
+    status_disabled: "&c&l● &r&cDisabled"
+  
+  # First Join Messages Toggle (Row 2, slot 22)
+  first_join_toggle:
+    slot: 22
+    material_enabled: "GOLD_BLOCK"
+    material_disabled: "GRAY_CONCRETE"
+    name_enabled: "&e&l⭐ &r&e&lFirst Join Messages"
+    name_disabled: "&7&l⭐ &r&7&lFirst Join Messages"
+    description:
+      - "&7&m━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+      - "&r"
+      - "&7Show a special welcome message"
+      - "&7for players joining for the"
+      - "&7first time."
+      - "&r"
+      - "&7&oClick to toggle this feature"
+      - "&r"
+      - "&7&m━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    status_enabled: "&a&l● &r&aEnabled"
+    status_disabled: "&c&l● &r&cDisabled"
+  
+  # Welcome Titles Toggle (Row 2, slot 23)
+  titles_toggle:
+    slot: 23
+    material_enabled: "PAPER"
+    material_disabled: "BARRIER"
+    name_enabled: "&b&l📜 &r&b&lWelcome Titles"
+    name_disabled: "&7&l📜 &r&7&lWelcome Titles"
+    description:
+      - "&7&m━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+      - "&r"
+      - "&7Display a title and subtitle"
+      - "&7when players join the server."
+      - "&r"
+      - "&7&oClick to toggle this feature"
+      - "&r"
+      - "&7&m━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    status_enabled: "&a&l● &r&aEnabled"
+    status_disabled: "&c&l● &r&cDisabled"
+  
+  # Welcome Sounds Toggle (Row 2, slot 24)
+  sounds_toggle:
+    slot: 24
+    material_enabled: "NOTE_BLOCK"
+    material_disabled: "MUSIC_DISC_STAL"
+    name_enabled: "&d&l🎵 &r&d&lWelcome Sounds"
+    name_disabled: "&7&l🎵 &r&7&lWelcome Sounds"
+    description:
+      - "&7&m━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+      - "&r"
+      - "&7Play a sound effect when"
+      - "&7players join the server."
+      - "&r"
+      - "&7&oClick to toggle this feature"
+      - "&r"
+      - "&7&m━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    status_enabled: "&a&l● &r&aEnabled"
+    status_disabled: "&c&l● &r&cDisabled"
+  
+  # Welcome Effects Toggle (Row 3, slot 29)
+  effects_toggle:
+    slot: 29
+    material_enabled: "FIREWORK_ROCKET"
+    material_disabled: "GUNPOWDER"
+    name_enabled: "&6&l✨ &r&6&lWelcome Effects"
+    name_disabled: "&7&l✨ &r&7&lWelcome Effects"
+    description:
+      - "&7&m━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+      - "&r"
+      - "&7Show particle effects when"
+      - "&7players join the server."
+      - "&r"
+      - "&7&oClick to toggle this feature"
+      - "&r"
+      - "&7&m━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    status_enabled: "&a&l● &r&aEnabled"
+    status_disabled: "&c&l● &r&cDisabled"
+  
+  # Broadcast Welcome Toggle (Row 3, slot 30)
+  broadcast_welcome_toggle:
+    slot: 30
+    material_enabled: "BELL"
+    material_disabled: "IRON_BARS"
+    name_enabled: "&a&l🔔 &r&a&lBroadcast Messages"
+    name_disabled: "&7&l🔔 &r&7&lBroadcast Messages"
+    description:
+      - "&7&m━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+      - "&r"
+      - "&7When &a&lenabled&r&7, welcome messages"
+      - "&7are sent to &a&lall players&r&7."
+      - "&r"
+      - "&7When &c&ldisabled&r&7, only the"
+      - "&7joining player sees the message."
+      - "&r"
+      - "&7&oClick to toggle this feature"
+      - "&r"
+      - "&7&m━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    status_enabled: "&a&l● &r&aEnabled"
+    status_disabled: "&c&l● &r&cDisabled"
+  
+  # Welcome Fireworks Toggle (Row 3, slot 31)
+  fireworks_toggle:
+    slot: 31
+    material_enabled: "FIREWORK_ROCKET"
+    material_disabled: "GUNPOWDER"
+    name_enabled: "&c&l🎆 &r&c&lWelcome Fireworks"
+    name_disabled: "&7&l🎆 &r&7&lWelcome Fireworks"
+    description:
+      - "&7&m━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+      - "&r"
+      - "&7Launch colorful fireworks when"
+      - "&7players join the server."
+      - "&r"
+      - "&7&oClick to toggle this feature"
+      - "&r"
+      - "&7&m━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    status_enabled: "&a&l● &r&aEnabled"
+    status_disabled: "&c&l● &r&cDisabled"
+  
+  # Welcome Kit Toggle (Row 3, slot 32)
+  kit_toggle:
+    slot: 32
+    material_enabled: "CHEST"
+    material_disabled: "BARRIER"
+    name_enabled: "&e&l📦 &r&e&lWelcome Kit"
+    name_disabled: "&7&l📦 &r&7&lWelcome Kit"
+    description:
+      - "&7&m━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+      - "&r"
+      - "&7Give new players a starter kit"
+      - "&7with useful items when they join."
+      - "&r"
+      - "&7&oClick to toggle this feature"
+      - "&r"
+      - "&7&m━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    status_enabled: "&a&l● &r&aEnabled"
+    status_disabled: "&c&l● &r&cDisabled"
+  
+  # Welcome Boss Bar Toggle (Row 3, slot 33)
+  boss_bar_toggle:
+    slot: 33
+    material_enabled: "DRAGON_HEAD"
+    material_disabled: "SKELETON_SKULL"
+    name_enabled: "&5&l🐉 &r&5&lWelcome Boss Bar"
+    name_disabled: "&7&l🐉 &r&7&lWelcome Boss Bar"
+    description:
+      - "&7&m━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+      - "&r"
+      - "&7Display a boss bar with welcome"
+      - "&7message at the top of the screen."
+      - "&r"
+      - "&7&oClick to toggle this feature"
+      - "&r"
+      - "&7&m━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    status_enabled: "&a&l● &r&aEnabled"
+    status_disabled: "&c&l● &r&cDisabled"
+  
+  # Welcome Action Bar Toggle (Row 4, center - slot 40)
+  action_bar_toggle:
+    slot: 40
+    material_enabled: "NAME_TAG"
+    material_disabled: "BARRIER"
+    name_enabled: "&b&l📋 &r&b&lWelcome Action Bar"
+    name_disabled: "&7&l📋 &r&7&lWelcome Action Bar"
+    description:
+      - "&7&m━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+      - "&r"
+      - "&7Display a welcome message in the"
+      - "&7action bar (above the hotbar) when"
+      - "&7players join the server."
+      - "&r"
+      - "&7&oClick to toggle this feature"
+      - "&r"
+      - "&7&m━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    status_enabled: "&a&l● &r&aEnabled"
+    status_disabled: "&c&l● &r&cDisabled"
+  
+  # Refresh Plugin Button (Bottom right - slot 53)
+  refresh:
+    slot: 53
+    material: "BLUE_STAINED_GLASS"
+    name: "&b&l🔄 &r&b&lRefresh Configuration"
+    description:
+      - "&7&m━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+      - "&r"
+      - "&7Reload the plugin configuration"
+      - "&7and refresh all features without"
+      - "&7restarting the server."
+      - "&r"
+      - "&b&lClick to refresh!"
+      - "&r"
+      - "&7&m━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+
+# SOUNDS
+sounds:
+  click: "ENTITY_EXPERIENCE_ORB_PICKUP"
+  click_volume: 1.0
+  click_pitch: 1.0
+  feed_refresh_volume: 0.5
+  feed_refresh_pitch: 1.5
+
+# FEED ENTRY FORMATTING
+feed_formatting:
+  entry_format: "&8[&7%time%&8] &r&7%player% &r%action%"
+  time_color: "&8"
+  player_color: "&7"
